@@ -1,6 +1,11 @@
 package dao;
 
 public class MemberDAO {
+
+	public static MemberDAO getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 /*
  1000/admin/admin/관리자
 1001/test1/1111/테스트1

@@ -1,5 +1,10 @@
 package dao;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class FileDAO {
 
 
@@ -39,3 +44,9 @@ public class FileDAO {
 		createFile(FileName.CART);
 
 	}
+
+	public void loadAllFiles() {
+		// TODO Auto-generated method stub
+		
+	}
+
