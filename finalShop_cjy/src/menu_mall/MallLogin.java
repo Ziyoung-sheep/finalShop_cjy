@@ -1,5 +1,10 @@
 package menu_mall;
 
+import _mall.MenuCommand;
+import controller.MallController;
+import dao.MemberDAO;
+import util.Util;
+
 public class MallLogin implements MenuCommand {
 	private MallController cont;
 
@@ -13,8 +18,8 @@ public class MallLogin implements MenuCommand {
 	public boolean update() {
 		MemberDAO dao = MemberDAO.getInstance();
 
-		String id = Util.getValue("아이디 ");
-		String pw = Util.getValue("페스워드 ");
+		String id = Util.getStringValue("아이디 ");
+		String pw = Util.getStringValue("패스워드 ");
 	
 		if (dao.isValidMember(id, pw)!=null) {
 			if (id.equals("admin")) {

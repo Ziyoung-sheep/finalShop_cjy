@@ -1,5 +1,10 @@
 package menu_mall;
 
+import _mall.MenuCommand;
+import controller.MallController;
+import dao.MemberDAO;
+import util.Util;
+
 public class MallJoin implements MenuCommand {
 	private MallController cont;
 
@@ -12,15 +17,15 @@ public class MallJoin implements MenuCommand {
 	public boolean update() {
 		System.out.println("=====[ 회원가입 ]=====");
 		MemberDAO dao = MemberDAO.getInstance();
-		String id = Util.getValue("아이디 ");
+		String id = Util.getStringValue("아이디 ");
 		
 		if(dao.getMemberById(id)!= null) {
 			System.out.println("이미 사용하는 아이디");
 			return false;
 		}
 		
-		String pw = Util.getValue("비밀번호 ");
-		String name = Util.getValue("이름 ");
+		String pw = Util.getStringValue("비밀번호 ");
+		String name = Util.getStringValue("이름 ");
 		
 		if(dao.insertMember(id , pw , name)) {
 			System.out.println("[ 회원 추가 완료 ]");

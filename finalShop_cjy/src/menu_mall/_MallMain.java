@@ -1,5 +1,9 @@
 package menu_mall;
 
+import _mall.MenuCommand;
+import controller.MallController;
+import util.Util;
+
 public class _MallMain implements MenuCommand {
 	private MallController cont;
 
@@ -14,7 +18,7 @@ public class _MallMain implements MenuCommand {
 	@Override
 	public boolean update() {
 
-		int sel = Util.getValue("메뉴 입력", 0, 2);
+		int sel = Util.getIntValue("메뉴 입력", 0, 2);
 		if (sel == 0) {
 			System.out.println("[ 프로그램 종료 ]");
 			cont.setNext(null);

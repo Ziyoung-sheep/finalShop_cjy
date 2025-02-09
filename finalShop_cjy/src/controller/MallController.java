@@ -2,7 +2,6 @@ package controller;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import _mall.MenuCommand;
 import dao.FileDAO;
 
@@ -40,18 +39,31 @@ public class MallController {
 	public void init() {
 		FileDAO.getInstance().loadAllFiles();
 		mapCont = new HashMap<>();
+		//가장 첫 메뉴
 		mapCont.put("MallMain", new _MallMain());
+		//회원 가입
 		mapCont.put("MallJoin", new MallJoin());
+		//회원 로그인
 		mapCont.put("MallLogin", new MallLogin());
-		mapCont.put("AdminBoard", new AdminBoard());
-		mapCont.put("AdminItem", new AdminItem());
+		//관리자 메인메뉴
 		mapCont.put("AdminMain", new _AdminMain());
+		//관리자의 회원 관리
 		mapCont.put("AdminMember", new AdminMember());
-		mapCont.put("MemberBoard", new MemberBoard());
-		mapCont.put("MemberCart", new MemberCart());
-		mapCont.put("MemberInfo", new MemberInfo());
+		//관리자 아이템 관리
+		mapCont.put("AdminItem", new AdminItem());
+		//관리자 게시판 관리
+		mapCont.put("AdminBoard", new AdminBoard());
+		//멤버 메인메뉴
 		mapCont.put("MemberMain", new _MemberMain());
+		//멤버 게시물 관리
+		mapCont.put("MemberBoard", new MemberBoard());
+		//멤버 카트 관리
+		mapCont.put("MemberCart", new MemberCart());
+		//멤버 정보 보기
+		mapCont.put("MemberInfo", new MemberInfo());
+		//멤버 쇼핑하기
 		mapCont.put("MemberShopping", new MemberShopping());
+		//회원 탈퇴
 		mapCont.put("MemberQuit", new MemberQuit());
 
 		menuCom = mapCont.get("MallMain");
