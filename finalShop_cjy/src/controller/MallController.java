@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import _mall.MenuCommand;
 import dao.FileDAO;
+import menu_mall._MallMain;
 
 public class MallController {
 	private MallController() {}
